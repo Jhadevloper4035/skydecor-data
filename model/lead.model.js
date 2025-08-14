@@ -45,14 +45,16 @@ const contactSchema = new mongoose.Schema(
       maxlength: [100, "Company name cannot exceed 100 characters"],
     },
 
-    companyAddress: {
+    companyCity: {
       type: String,
       required: [true, "Company address is required"],
       trim: true,
-      minlength: [10, "Address must be at least 10 characters long"],
+      minlength: [2, "Address must be at least 10 characters long"],
       maxlength: [300, "Address cannot exceed 300 characters"],
     },
-
+    leadType: {
+      type: String,
+    },
     place: {
       type: String,
     },

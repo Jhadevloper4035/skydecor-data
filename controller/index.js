@@ -7,9 +7,9 @@ module.exports.submitFormShowroom = async (req, res) => {
       email,
       country_code,
       mobile_number,
-      userType,
+      usertype,
       company_name,
-      company_address,
+      company_city,
     } = req.body;
 
     // Validation
@@ -18,9 +18,9 @@ module.exports.submitFormShowroom = async (req, res) => {
       !email ||
       !country_code ||
       !mobile_number ||
-      !userType ||
+      !usertype ||
       !company_name ||
-      !company_address
+      !company_city
     ) {
       return res
         .status(400)
@@ -33,13 +33,14 @@ module.exports.submitFormShowroom = async (req, res) => {
       email,
       countryCode: country_code,
       mobileNumber: mobile_number,
-      userType: userType,
+      userType: usertype,
       companyName: company_name,
-      companyAddress: company_address,
-      place : "Showroom"
+      companyCity: company_city,
+      leadType: "showroom",
+      place: "Showroom",
     });
 
-    res.status(201).json({ message: "Lead generated successfully" });
+    res.redirect("/form/thank-you");
   } catch (error) {
     console.error(error);
     return res
@@ -55,9 +56,9 @@ module.exports.submitFormEvent = async (req, res) => {
       email,
       country_code,
       mobile_number,
-      userType,
+      usertype,
       company_name,
-      company_address,
+      company_city,
     } = req.body;
 
     // Validation
@@ -66,9 +67,9 @@ module.exports.submitFormEvent = async (req, res) => {
       !email ||
       !country_code ||
       !mobile_number ||
-      !userType ||
+      !usertype ||
       !company_name ||
-      !company_address
+      !company_city
     ) {
       return res
         .status(400)
@@ -81,13 +82,13 @@ module.exports.submitFormEvent = async (req, res) => {
       email,
       countryCode: country_code,
       mobileNumber: mobile_number,
-      userType: userType,
+      userType: usertype,
       companyName: company_name,
-      companyAddress: company_address,
+      companyCity: company_city,
+      leadType: "event",
       place: "Metacia 2025",
     });
-
-    res.status(201).json({ message: "Lead generated successfully" });
+    res.redirect("/form/thankyou");
   } catch (error) {
     console.error(error);
     return res
@@ -96,4 +97,24 @@ module.exports.submitFormEvent = async (req, res) => {
   }
 };
 
+module.exports.getEventAllLead = async (req, res) => {
+  try {
+    const leadData = await Contact.find({ leadType: "event" });
+    return res
+      .status(200)
+      .json({ message: "Data fetched Sucessfully", LeadData: leadData });
+  } catch (error) {
+    res.status(500).json({ message: "Inetrnal server error" });
+  }
+};
 
+module.exports.getShowroomAllLead = async (req, res) => {
+  try {
+    const leadData = await Contact.find({ leadType: "showroom" });
+    return res
+      .status(200)
+      .json({ message: "Data fetched Sucessfully", LeadData: leadData });
+  } catch (error) {
+    res.status(500).json({ message: "Inetrnal server error" });
+  }
+};
