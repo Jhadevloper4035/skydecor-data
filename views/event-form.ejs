@@ -40,12 +40,10 @@
     <a href="/" class="mb-3 me-2 mb-md-0 text-decoration-none lh-1">
       <img src="/imgs/logo.png" alt="Company Logo" style="height:60px;">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
   </nav>
+
+
+
 
 
   <div class="container-contact100">
@@ -55,34 +53,30 @@
           Get in Touch with SkyDecor
         </span>
 
+
+
+
         <div class="wrap-input100 validate-input" data-validate="Name is required">
-          <span class="label-input100">Full Name</span>
-          <input class="input100" type="text" name="name" placeholder="Enter your email addess">
+          <span class="label-input100">Full Name </span>
+          <input class="input100" type="text" name="name" placeholder="Enter your name " required>
           <span class="focus-input100"></span>
         </div>
+
+
+
 
         <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
           <span class="label-input100">Email</span>
-          <input class="input100" type="text" name="email" placeholder="Enter your email addess">
+          <input class="input100" type="text" name="email" placeholder="Enter your mobile number" required>
           <span class="focus-input100"></span>
         </div>
 
-        <div class="wrap-input100 validate-input" data-validate="Valid mobile number is required">
-          <span class="label-input100">Mobile Number</span>
-          <div style="display: flex; gap: 0.5rem;">
-            <select class="input100" name="country_code" required style="flex: 0.5; border: none;">
-              <option value="+1">🇺🇸 +1 (USA)</option>
-              <option value="+91">🇮🇳 +91 (India)</option>
-              <option value="+44">🇬🇧 +44 (UK)</option>
-              <option value="+61">🇦🇺 +61 (Australia)</option>
-              <option value="+81">🇯🇵 +81 (Japan)</option>
-              <option value="+49">🇩🇪 +49 (Germany)</option>
-              <option value="+971">🇦🇪 +971 (UAE)</option>
-              <option value="+86">🇨🇳 +86 (China)</option>
-              <!-- Add more country codes as needed -->
-            </select>
-            <input class="input100" type="tel" name="mobile_number" placeholder="9876543210" required style="flex: 1;">
-          </div>
+
+
+
+        <div class="wrap-input100 validate-input" data-validate="Mobile Number is required">
+          <span class="label-input100">Mobile Number </span>
+          <input class="input100" type="text" name="mobile_number" placeholder="Enter your phone number" required>
           <span class="focus-input100"></span>
         </div>
 
@@ -90,26 +84,32 @@
         <div class="wrap-input100 input100-select">
           <span class="label-input100">User Type</span>
           <div>
-            <select class="selection-2" name="usertype">
+            <select class="selection-2" name="usertype" required>
               <option>Architect</option>
-              <option>Tech Partner</option>
               <option>Trade Partner</option>
             </select>
           </div>
           <span class="focus-input100"></span>
         </div>
 
-
-        <div class="wrap-input100 validate-input" data-validate="Name is required">
+        <div class="wrap-input100 validate-input" data-validate=" Company Name is required">
           <span class="label-input100">Company Name </span>
-          <input class="input100" type="text" name="company_name" placeholder="Registered business name">
+          <input class="input100" type="text" name="company_name" placeholder="Registered business name" required>
           <span class="focus-input100"></span>
         </div>
 
 
-        <div class="wrap-input100 validate-input" data-validate="Name is required">
+
+        <div class="wrap-input100 validate-input" data-validate="Company city is required">
           <span class="label-input100">Company City </span>
-          <input class="input100" type="text" name="company_city" placeholder="Company city ">
+          <input class="input100" type="text" name="company_city" placeholder="Company city " required>
+          <span class="focus-input100"></span>
+        </div>
+
+
+        <div class="wrap-input100 validate-input" data-validate="Company state is required">
+          <span class="label-input100">Company state </span>
+          <input class="input100" type="text" name="company_state" placeholder="Company state " required>
           <span class="focus-input100"></span>
         </div>
 
@@ -118,16 +118,14 @@
           <div class="wrap-contact100-form-btn">
             <div class="contact100-form-bgbtn"></div>
             <button class="contact100-form-btn">
-              <span>
-                Submit
-                <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-              </span>
+              <span> Submit <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i> </span>
             </button>
           </div>
         </div>
       </form>
     </div>
   </div>
+
 
 
 

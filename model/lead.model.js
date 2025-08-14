@@ -19,12 +19,6 @@ const contactSchema = new mongoose.Schema(
       match: [/^\S+@\S+\.\S+$/, "Please enter a valid email address"],
     },
 
-    countryCode: {
-      type: String,
-      required: [true, "Country code is required"],
-      match: [/^\+\d{1,4}$/, "Invalid country code format"],
-    },
-
     mobileNumber: {
       type: String,
       required: [true, "Mobile number is required"],
@@ -46,6 +40,13 @@ const contactSchema = new mongoose.Schema(
     },
 
     companyCity: {
+      type: String,
+      required: [true, "Company address is required"],
+      trim: true,
+      minlength: [2, "Address must be at least 10 characters long"],
+      maxlength: [300, "Address cannot exceed 300 characters"],
+    },
+    companyState: {
       type: String,
       required: [true, "Company address is required"],
       trim: true,

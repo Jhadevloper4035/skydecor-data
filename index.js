@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/lead", formRoute);
 app.use("/form", pageRoute);
 app.use("/user", userRoute);
-app.use("/admin", adminRoute);
+app.use("/admin",adminRoute);
 
 
 // close db

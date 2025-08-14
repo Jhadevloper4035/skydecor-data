@@ -5,22 +5,22 @@ module.exports.submitFormShowroom = async (req, res) => {
     const {
       name,
       email,
-      country_code,
       mobile_number,
       usertype,
       company_name,
       company_city,
+      company_state
     } = req.body;
 
     // Validation
     if (
       !name ||
       !email ||
-      !country_code ||
       !mobile_number ||
       !usertype ||
       !company_name ||
-      !company_city
+      !company_city ||
+      !company_state
     ) {
       return res
         .status(400)
@@ -36,6 +36,7 @@ module.exports.submitFormShowroom = async (req, res) => {
       userType: usertype,
       companyName: company_name,
       companyCity: company_city,
+      companyState: company_state,
       leadType: "showroom",
       place: "Showroom",
     });
@@ -54,22 +55,22 @@ module.exports.submitFormEvent = async (req, res) => {
     const {
       name,
       email,
-      country_code,
       mobile_number,
       usertype,
       company_name,
       company_city,
+      company_state
     } = req.body;
 
     // Validation
     if (
       !name ||
       !email ||
-      !country_code ||
       !mobile_number ||
       !usertype ||
       !company_name ||
-      !company_city
+      !company_city ||
+      !company_state
     ) {
       return res
         .status(400)
@@ -80,11 +81,11 @@ module.exports.submitFormEvent = async (req, res) => {
     await Contact.create({
       fullName: name,
       email,
-      countryCode: country_code,
       mobileNumber: mobile_number,
       userType: usertype,
       companyName: company_name,
       companyCity: company_city,
+      companyState: company_state,
       leadType: "event",
       place: "Metacia 2025",
     });
