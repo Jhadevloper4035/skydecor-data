@@ -31,7 +31,7 @@ const contactSchema = new mongoose.Schema(
       match: [/^\d{7,15}$/, "Mobile number must be between 7 and 15 digits"],
     },
 
-    service: {
+    userType: {
       type: String,
       required: [true, "Service selection is required"],
       enum: ["Architect", "Tech Partner", "Trade Partner"],
@@ -53,11 +53,9 @@ const contactSchema = new mongoose.Schema(
       maxlength: [300, "Address cannot exceed 300 characters"],
     },
 
-    event : {
-        type : String , 
-        default : "Metacia"
-    }
-
+    place: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
